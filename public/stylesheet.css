@@ -4,3 +4,12 @@
   border:0;
   overflow: hidden;
 }
+
+input, button{
+    height: 2rem;
+}
+
+input{
+    width : 8rem;
+}
+

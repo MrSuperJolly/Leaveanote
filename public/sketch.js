@@ -9,6 +9,7 @@ let addnote_input;
 let addnote_button;
 let allNotes = [];
 let overlapException = false;
+let firstDraw = true;
 
 function preload() {
     note_img = loadImage('images/note.png');
@@ -35,7 +36,10 @@ function draw() {
     background(50);
     
 
+    
+
     if (allNotes.length > 0) {
+
         for (item of allNotes)
         {
             
@@ -55,9 +59,20 @@ function draw() {
             
             
             }
-        
+
+            if(firstDraw){
+                item.x = getRandomInt(windowWidth - image_offset);
+                item.y = getRandomInt(windowHeight - image_offset);
+                
+            }
+            
+            
             display(item);
         }
+
+       
+        firstDraw = false;
+        
     }
 
     
@@ -107,10 +122,12 @@ function addNote() {
 }
 
 function display(note){
+   
     image(note_img, note.x, note.y);
     text(note.message, note.x + text_offset, note.y + text_offset, note_img_width -text_offset, note_img_height - text_offset);
     textSize(25);
     textFont(kalam);
+    
 }
 
 class note {
