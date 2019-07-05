@@ -4,7 +4,7 @@
   "description": "leave a note that is saved to a database and shown",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "Patrick Foulger",
   "license": "ISC",
